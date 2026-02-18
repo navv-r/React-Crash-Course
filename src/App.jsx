@@ -8,11 +8,11 @@ function App() {
     <>
       <Title />
       <div className="todo-wrapper">
-        <Todo />
-        <Todo />
-        <Todo />
+        <Todo title="Finish Frontend Simplified"/>
+        <Todo title="Learn React"/>
+        <Todo title="Build a project"/>
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </>
   );
 }

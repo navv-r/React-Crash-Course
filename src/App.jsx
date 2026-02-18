@@ -21,7 +21,9 @@ function App() {
           paragraph="Learn all the skills required to land a 100K job as a frontend developer"
         />
       </div>
-      {/* <Modal /> */}
+      <Modal
+        title="Are you sure you want to delete this todo?"
+      />
     </>
   );
 }

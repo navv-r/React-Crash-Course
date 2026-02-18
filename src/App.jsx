@@ -3,11 +3,12 @@ import Todo from './components/Todo.jsx';
 import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
 
-function App() {
+function App( ) {
+  let isModalOpen = false;
   return (
     <>
       <Title />
-      <div className="todo-wrapper">
+      <div className="todo__wrapper">
         <Todo 
           title="Finish Frontend Simplified"
           paragraph="Code along with Frontend Simplified step by step."
@@ -21,12 +22,9 @@ function App() {
           paragraph="Learn all the skills required to land a 100K job as a frontend developer"
         />
       </div>
-      <Modal
-        title="Are you sure you want to delete this todo?"
-      />
+      {isModalOpen && <Modal title="Confirm Delete"/>}
     </>
   );
 }
-
 export default App;
    

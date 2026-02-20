@@ -12,12 +12,16 @@ function App( ) {
     setShowModal(true) 
   }
 
-  function onModalCancel() {
+  function cancelModal() {
+    setShowModal(false)
+  }
+
+  function confirmModal() {
     setShowModal(false)
   }
   
   return (
-    <> 
+    <>  
       <Title />
       <div>
         <input type="text" onChange={(event) => {
@@ -30,12 +34,17 @@ function App( ) {
         <Todo onTodoDelete={onTodoDelete}  title="Learn React"/>
         <Todo onTodoDelete={onTodoDelete}  title="Land a $100K job"/>
       </div>
-      {showModal && <Modal title="Confirm Delete?"/>}
+      {showModal && (
+        <Modal 
+          cancelModal={cancelModal}  
+          confirmModal={confirmModal} 
+          title="Confirm Delete?"/>
+        )}
     </>    
   );
 
   
 }
- 
+  
 
 export default App; 

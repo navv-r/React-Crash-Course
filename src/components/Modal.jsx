@@ -15,4 +15,5 @@ function Modal({ title, cancelModal, confirmModal }) {
     )
 }
  
+
 export default Modal

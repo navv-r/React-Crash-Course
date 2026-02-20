@@ -34,9 +34,10 @@ function App( ) {
         <Todo onTodoDelete={onTodoDelete}  title="Learn React"/>
         <Todo onTodoDelete={onTodoDelete}  title="Land a $100K job"/>
       </div>
+      
       {showModal && (
         <Modal 
-          cancelModal={cancelModal}  
+          cancelModal={cancelModal} 
           confirmModal={confirmModal} 
           title="Confirm Delete?"/>
         )}

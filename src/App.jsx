@@ -6,10 +6,18 @@ import React, { useState } from 'react';
 import Counter from './components/Counter.jsx';
 
 function App( ) {
-  return <Counter />
   const [showModal, setShowModal] = useState(false) 
+  
+  function onTodoDelete() {
+    setShowModal(true) 
+  }
+
+  function onModalCancel() {
+    setShowModal(false)
+  }
+  
   return (
-    <>
+    <> 
       <Title />
       <div>
         <input type="text" onChange={(event) => {
@@ -18,14 +26,16 @@ function App( ) {
         <button onClick={() => setShowModal(true)}>Add Item</button>
       </div>
       <div className="todo__wrapper">
-        <Todo title="Finish Frontend Simplified"/>
-        <Todo title="Learn React"/>
-        <Todo title="Land a $100K job"/>
+        <Todo onTodoDelete={onTodoDelete} title="Finish Frontend Simplified"/>
+        <Todo onTodoDelete={onTodoDelete}  title="Learn React"/>
+        <Todo onTodoDelete={onTodoDelete}  title="Land a $100K job"/>
       </div>
-      {showModal && <Modal title="Confirm Delete"/>}
-    </>
+      {showModal && <Modal title="Confirm Delete?"/>}
+    </>    
   );
+
+  
 }
+ 
 
-
-export default App;
+export default App; 
